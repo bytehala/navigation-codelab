@@ -17,6 +17,7 @@
 package com.example.android.codelabs.navigation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Button
 import androidx.fragment.app.Fragment
@@ -61,9 +62,11 @@ class HomeFragment : Fragment() {
         //TODO END STEP 6
 
         //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
-//        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
-//                Navigation.createNavigateOnClickListener(R.id.next_action, null)
-//        )
+
+        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener {
+            val action = HomeFragmentDirections.nextAction(1)
+            findNavController().navigate(action)
+        }
         //TODO END STEP 7.2
     }
 
